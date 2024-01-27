@@ -3,6 +3,10 @@ This project aims to enable the user to add tags to subreddits. This way you can
 You can search for your saved subreddit by tags, use "+" to search mutliple tags(example: coding+scripting). 
 This returns all subreddits that have these tags. You can then copy this text and use it on sites like "redditp".
 
+# Browsers
+Tested only on Chrome, should also work on other Chrome based browsers.
+Probably works on Firefox too since I'm not using any chrome related stuff.
+
 # Things to Maybe Add
 - [ ] Autosuggest tags that are in the DB.
 - [ ] Project looks poopie make it look less poopie.
