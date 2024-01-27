@@ -1,0 +1,43 @@
+body {
+    background: #ccc;
+    padding: 50px;
+  }
+  
+  main {
+    background: white;
+    padding: 50px;
+    max-width: 500px;
+    margin: 0px auto;
+  }
+  
+  input {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .tags {
+    margin: 10px 0;
+  }
+  
+  .reddit-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #ccc;
+    border-radius: 2px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+
+  /* Optional: Style the container */
+#tagsResults {
+  display: flex;
+  gap: 10px; /* Adjust the gap between input and button as needed */
+}
+
+.flex-it {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+}
