@@ -7,4 +7,7 @@ This returns all subreddits that have these tags. You can then copy this text an
 - [ ] Autosuggest tags that are in the DB.
 - [ ] Project looks poopie make it look less poopie.
 
+# Support Me
+If you want me to continue to develop this project please consider donating. I currently work two jobs and code when I'm not dead tired.
 
+https://ko-fi.com/adultdev
