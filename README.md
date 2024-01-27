@@ -5,7 +5,7 @@ This returns all subreddits that have these tags. You can then copy this text an
 
 # Browsers
 Tested only on Chrome, should also work on other Chrome based browsers.
-Probably works on Firefox too since I'm not using any chrome related stuff.
+Probably works on Firefox too since I'm not using any chrome specific code.
 
 # Things to Maybe Add
 - [ ] Autosuggest tags that are in the DB.
