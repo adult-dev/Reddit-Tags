@@ -1,3 +1,20 @@
+
+
+function injectDataList(items){
+  console.log(items);
+  var datalist = document.createElement("datalist");
+  datalist.id = "tagsDB";
+  for(var i = 0 ; i <items.length; i ++){
+    var current_option = document.createElement("option");
+    current_option.value = items[i];
+    datalist.appendChild(current_option);
+  }
+
+  document.body.appendChild(datalist);
+}
+
+
+
 // Function to get all tags from the 'reddittags' store
 async function getAllTags() {
   try {
@@ -24,23 +41,25 @@ async function getAllTags() {
 }
 
 
-// (async () => {
-//   try {
+(async () => {
+  try {
 
-//     const allTags = await getAllTags().then(() => function(){
-//         const arrayTags = Array.from(allTags);
-//         console.log(arrayTags);
-//         $( "#tagField" ).autocomplete({
-//           source: arrayTags
-//         });
-        
-//       })
+    await getAllTags().then(function(allTags){
+      const arrayTags = Array.from(allTags);
+      console.log(arrayTags);
+      $("#searchTagsInput").autocomplete({
+        source: arrayTags,
+        minLength: 1
+      })
+
+      injectDataList(arrayTags);
+    });
       
-//   } catch (error) {
-//     // Handle errors
-//     console.error('Error:', error);
-//   }
-// })();
+  } catch (error) {
+    // Handle errors
+    console.error('Error:', error);
+  }
+})();
 
 // TODO: Autosuggestion not working.
 
@@ -61,7 +80,6 @@ async function getSubredditsWithTags(){
   const listOfTags = get_search_input();
   var results = [];
   const allItems = await db.reddittags.toArray();
-
 
   for(var ai = 0; ai<allItems.length; ai++){
     for(var t = 0; t<listOfTags.length; t++){
