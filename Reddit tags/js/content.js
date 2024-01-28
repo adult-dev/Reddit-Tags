@@ -78,6 +78,8 @@ div.innerHTML = `
   <div class="ui-widget">
   <label for = "tagField">Tags: </label>
     <input type="text" id="tagField"/>
+    <ul id="suggestions"></ul>
+
     </div>
   </form>
   <div class="tags"></div>
@@ -122,7 +124,7 @@ div2.innerHTML = `
   <h1>Search With Tags</h1>
   <form id="searchForm">
   <div class="ui-widget">
-    <input type="text" id="searchTagsInput"/>
+    <input list="tagsDB" type="text" id="searchTagsInput"/>
     </div>
   </form>
   <div style="display:none;" id="tagsResults">
