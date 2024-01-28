@@ -9,6 +9,7 @@ Probably works on Firefox too since I'm not using any chrome specific code.
 
 # Things to Maybe Add
 - [ ] Autosuggest tags that are in the DB.
+  - [ ] Make it like adding tags instead of adding "+" at each tag.   
 - [ ] Project looks poopie make it look less poopie.
 
 # Support Me
