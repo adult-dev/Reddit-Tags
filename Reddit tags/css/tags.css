@@ -29,9 +29,7 @@ body {
     margin-bottom: 4px;
   }
 
-
-  /* Optional: Style the container */
-#tagsResults {
+#tagsResults, #searchResults {
   display: flex;
   gap: 10px; /* Adjust the gap between input and button as needed */
 }
