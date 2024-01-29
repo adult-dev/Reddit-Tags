@@ -1,5 +1,5 @@
 # What it does
-This project aims to enable the user to add tags to subreddits. This way you can retrieve subreddits you are interested in.
+This project aims to enable the user to add tags to subreddits. This way you can retrieve subreddits you are interested in and multiview them with sites like redditp, scrolller etc.
 Press the "add tag" button(might need to refresh page). Enter the tag you want to add and press enter, you can add multiple tags.
 Press the "search tags" button. Enter the tags you want, like with the adding of tag, write the tag and press enter. You can enter multiple tags.
 Show the results with a button to copy the generated subreddits example coding+scripting
