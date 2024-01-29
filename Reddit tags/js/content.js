@@ -77,7 +77,7 @@ div.innerHTML = `
   <form id="tagForm">
   <div class="ui-widget">
   <label for = "tagField">Tags: </label>
-    <input type="text" id="tagField"/>
+    <input list="tagsDB" type="text" id="tagField"/>
     <ul id="suggestions"></ul>
 
     </div>
@@ -124,20 +124,20 @@ div2.innerHTML = `
   <h1>Search With Tags</h1>
   <form id="searchForm">
   <div class="ui-widget">
-    <input list="tagsDB" type="text" id="searchTagsInput"/>
+    <input list="tagsDB" type="text" id="searchField"/>
     </div>
   </form>
-  <div style="display:none;" id="tagsResults">
-  <p>Result</p>
-  <input type="text" id="searchTagsResults"/>
-  <button id="copy-text">Copy Text</button>
-
-  </div>
+ 
   <div class="search"></div>
+
+  <div style="display:none;" id="resultsContainer">
+  <p>Result</p>
+  <input type="text" id="resultField"/>
+  <button id="copy-text">Copy Text</button>
+  </div>
 </main>
     
       </div>
-
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button id="save_button2" type="button" class="btn btn-primary">Search</button>
@@ -157,6 +157,7 @@ document.body.appendChild(holder);
 const tagWrapper = document.querySelector('.tags');
 const tagForm = document.querySelector('#tagForm');
 const tagField = document.querySelector('#tagField');
+
 
 tagField.addEventListener('keyup', (e) => {
   e.target.value.replace(/.*,/g, match => {
