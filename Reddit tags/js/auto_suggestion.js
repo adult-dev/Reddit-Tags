@@ -1,7 +1,4 @@
-
-
 function injectDataList(items){
-  console.log(items);
   var datalist = document.createElement("datalist");
   datalist.id = "tagsDB";
   for(var i = 0 ; i <items.length; i ++){
@@ -46,7 +43,6 @@ async function getAllTags() {
 
     await getAllTags().then(function(allTags){
       const arrayTags = Array.from(allTags);
-      console.log(arrayTags);
       $("#searchTagsInput").autocomplete({
         source: arrayTags,
         minLength: 1
@@ -77,7 +73,10 @@ function get_search_input(){
 
 // Get all items in db.
 async function getSubredditsWithTags(){
-  const listOfTags = get_search_input();
+  // const listOfTags2 = get_search_input();
+  const listOfTags = get_search_tags_from_modal()
+  console.log(listOfTags);
+  // console.log(listOfTags2);
   var results = [];
   const allItems = await db.reddittags.toArray();
 
@@ -115,8 +114,8 @@ function copyText() {
 
 var copy_button = document.querySelector("#copy-text");
 copy_button.addEventListener("click", copyText)
-var div_results = document.querySelector("#tagsResults");
-var search_tag_results = document.querySelector("#searchTagsResults")
+var div_results = document.querySelector("#resultsContainer");
+var search_tag_results = document.querySelector("#resultField")
 var search_tag_button = document.querySelector("#save_button2");
 search_tag_button.addEventListener('click', function(){
   getSubredditsWithTags().then(function(results){
@@ -124,6 +123,58 @@ search_tag_button.addEventListener('click', function(){
     div_results.style.display = "block";
   })
 });
+
+
+function get_search_tags_from_modal(){
+  const found_tags_elements = document.getElementsByClassName("search-tag")
+  var found_tags = new Set()
+  for(var i = 0; i < found_tags_elements.length; i++){
+      found_tags.add(found_tags_elements[i].textContent);
+  }
+  return Array.from(found_tags);
+}
+
+const searchWrapper = document.querySelector('.search');
+const searchForm = document.querySelector('#searchForm');
+const searchField = document.querySelector('#searchField');
+
+
+searchField.addEventListener('keyup', (e) => {
+  e.target.value.replace(/.*,/g, match => {
+    match = match.trim();
+    match = match.substr(0, match.length - 1);
+    
+    addSearchTag(match);
+    
+    e.target.value = '';
+    return '';
+  });                       
+});
+
+searchForm.addEventListener('submit', function(e) {
+  addSearchTag(searchField.value);
+  searchField.value = '';
+  e.preventDefault();
+});
+
+
+function addSearchTag(tag) {
+  tag = tag || '';
+
+  if (tag.length > 0) {
+    let newTag = document.createElement('span');
+    newTag.classList.add('search-tag');
+    let newText = document.createTextNode(tag);
+    newTag.append(newText);
+    // Remove tag on click.
+    newTag.addEventListener('click', () =>{
+      newTag.remove();
+    })
+    searchWrapper.appendChild(newTag);
+  }
+}
+
+
 
 
 
