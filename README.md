@@ -3,7 +3,7 @@ This project aims to enable the user to add tags to subreddits. This way you can
 Press the "add tag" button(might need to refresh page). Enter the tag you want to add and press enter, you can add multiple tags.
 Press the "search tags" button. Enter the tags you want, like with the adding of tag, write the tag and press enter. You can enter multiple tags.
 Show the results with a button to copy the generated subreddits example coding+scripting
-This returns all subreddits that have these tags. You can then copy this text and use it on sites like "redditp".
+This returns all subreddits that have these tags. You can then copy this text and use it on sites like "redditp", "redditpx" or "scrolller".
 
 # Browsers
 Tested only on Chrome, should also work on other Chrome based browsers.
